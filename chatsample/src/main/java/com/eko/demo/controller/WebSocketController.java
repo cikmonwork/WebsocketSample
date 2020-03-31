@@ -41,6 +41,7 @@ public class WebSocketController  {
 
 		 // отправка сообщения приватно по указанному имени пользоателя
 		messagingTemplate.convertAndSendToUser(principal.getName(), "/queue/reply",principal.getName()+"-"+name);
+		messagingTemplate.convertAndSendToUser(principal.getName(), "/vents/one","vents/one "+principal.getName()+"-"+name);
 	}
 
 

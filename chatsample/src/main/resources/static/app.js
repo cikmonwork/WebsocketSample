@@ -32,9 +32,14 @@ function connect() {
 			showGreeting('/user/topic/reply - ' + message.body);
 		});
 		ws.subscribe("/user/queue/reply", function(message) {
+			console.log(message);
 			showGreeting('/user/queue/reply - ' + message.body);
 		});
 
+		ws.subscribe("/user/vents/one", function(message) {
+			console.log(message);
+			showGreeting('/user/queue/reply - ' + message.body);
+		});
 	}, function(error) {
 		alert("STOMP error " + error);
 	});
